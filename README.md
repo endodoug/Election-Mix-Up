@@ -8,9 +8,6 @@ Election Mix Up
 
 #### App Stores
 <!-- edit this image location -->
-[![Get it on Google Play](https://raw.github.com/repat/README-template/master/googleplay.png)](https://play.google.com/store/apps/details?id=com.package.path)
-
-<!-- edit this image location -->
 [![Download on the AppStore](https://raw.github.com/repat/README-template/master/appstore.png)](https://itunes.apple.com/app/id123456)
 
 #### QR Market Links
