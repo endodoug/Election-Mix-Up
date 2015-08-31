@@ -29,10 +29,25 @@ class ViewController: UIViewController {
             var randomX = CGFloat(arc4random_uniform(300))
             var randomY = CGFloat(arc4random_uniform(480))
             
-            label.center = CGPoint(x: randomX - 5, y: randomY)
+            label.center = CGPoint(x: randomX - 05, y: randomY + 10)
             
             view.addSubview(label)
+            
+            var panGesture = UIPanGestureRecognizer(target: self, action: Selector("handlePanGesture:"))
+            label.addGestureRecognizer(panGesture)
+            label.userInteractionEnabled = true
+            
         }
+    }
+    
+    func handlePanGesture(panGesture: UIPanGestureRecognizer) {
+        // get translation
+        var translation = panGesture.translationInView(view)
+        panGesture.setTranslation(CGPointZero, inView: view)
+        
+        // add dx, dy to current label position
+        var label = panGesture.view as! UILabel
+        label.center = CGPoint(x: label.center.x + translation.x, y: label.center.y + translation.y)
         
     }
 
