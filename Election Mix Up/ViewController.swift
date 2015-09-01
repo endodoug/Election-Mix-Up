@@ -106,6 +106,19 @@ class ViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    func socialShare (sharingImage: UIImage?) {
+        var sharingItems = [AnyObject]()
+        if let image = sharingImage {
+            sharingItems.append(image)
+        }
+        
+        let activityViewController = UIActivityViewController(activityItems: sharingItems, applicationActivities: nil)
+        
+        
+        activityViewController.excludedActivityTypes = [UIActivityTypeCopyToPasteboard,UIActivityTypeAirDrop,UIActivityTypeAddToReadingList,UIActivityTypeAssignToContact,UIActivityTypePostToTencentWeibo,UIActivityTypePostToVimeo,UIActivityTypePrint,UIActivityTypeSaveToCameraRoll,UIActivityTypePostToWeibo]
+        self.presentViewController(activityViewController, animated: true, completion: nil)
+    }
+    
     @IBAction func blueStateButtonTapped(sender: UIButton) {
         view.backgroundColor = UIColor.blueColor()
         
@@ -116,9 +129,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func shareButtonTapped(sender: UIButton) {
-        let activityItem = "Election Mix Up! :)"
-        let activityViewController : UIActivityViewController = UIActivityViewController(activityItems: [activityItem], applicationActivities: nil)
-        self.presentViewController(activityViewController, animated: true, completion: nil)
+        
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.layer.renderInContext(UIGraphicsGetCurrentContext())
+        var image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        var postImage = UIImage(named: "\(image)")
+        
+        socialShare(UIImage(named: "image"))
+        //println(image)
+
     }
 }
 

@@ -53,16 +53,16 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U9R-6X-pBd" userLabel="Share Button">
-                                <rect key="frame" x="280" y="540" width="40" height="40"/>
+                                <rect key="frame" x="280" y="552" width="40" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="1q0-sa-aP0"/>
-                                    <constraint firstAttribute="width" constant="40" id="4iZ-0w-3Ao"/>
+                                    <constraint firstAttribute="width" constant="40" id="dvg-mA-vqq"/>
+                                    <constraint firstAttribute="height" constant="40" id="ncY-g2-pZD"/>
                                 </constraints>
                                 <state key="normal" image="Share">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="shareButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FrB-I3-n0Z"/>
+                                    <action selector="shareButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hb3-N8-AUD"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -71,12 +71,12 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ECw-Pz-ebK" secondAttribute="bottom" constant="8" id="64t-Tp-weY"/>
                             <constraint firstItem="BI6-AG-iyx" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="7tk-xq-DWC"/>
                             <constraint firstItem="J8J-By-AAw" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="FWN-vl-IzX"/>
+                            <constraint firstAttribute="centerX" secondItem="U9R-6X-pBd" secondAttribute="centerX" id="HCY-Fs-9QK"/>
                             <constraint firstItem="J8J-By-AAw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="OIX-5b-LLe"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="BI6-AG-iyx" secondAttribute="bottom" constant="8" id="Ooz-oe-E4d"/>
                             <constraint firstItem="J8J-By-AAw" firstAttribute="leading" secondItem="Oax-qS-8hE" secondAttribute="trailing" constant="8" id="UvB-ge-V0D"/>
                             <constraint firstItem="ECw-Pz-ebK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="YhJ-jo-9Ys"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="U9R-6X-pBd" secondAttribute="bottom" constant="20" id="mlC-wK-oic"/>
-                            <constraint firstAttribute="centerX" secondItem="U9R-6X-pBd" secondAttribute="centerX" id="opF-5v-xab"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="U9R-6X-pBd" secondAttribute="bottom" constant="8" id="ezQ-sw-9mA"/>
                             <constraint firstItem="Oax-qS-8hE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="pWa-8F-CDO"/>
                             <constraint firstItem="Oax-qS-8hE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="pq1-Z6-VMY"/>
                         </constraints>
