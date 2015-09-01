@@ -115,5 +115,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
         view.backgroundColor = UIColor.redColor()
     }
 
+    @IBAction func shareButtonTapped(sender: UIButton) {
+        let activityItem = "Election Mix Up! :)"
+        let activityViewController : UIActivityViewController = UIActivityViewController(activityItems: [activityItem], applicationActivities: nil)
+        self.presentViewController(activityViewController, animated: true, completion: nil)
+    }
 }
 
