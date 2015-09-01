@@ -17,32 +17,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a word:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhc-gK-49d">
-                                <rect key="frame" x="16" y="558" width="95" height="22"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" cocoaTouchSystemColor="lightTextColor"/>
-                                <size key="shadowOffset" width="1" height="1"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oax-qS-8hE">
-                                <rect key="frame" x="119" y="555" width="465" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a word" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oax-qS-8hE">
+                                <rect key="frame" x="16" y="28" width="523" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
-                                <connections>
-                                    <action selector="addWordTextFieldEntry:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="sgU-fw-Td4"/>
-                                </connections>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J8J-By-AAw">
+                                <rect key="frame" x="547" y="28" width="37" height="30"/>
+                                <state key="normal" title="Enter">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addWordEnterButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KBs-Kq-X9s"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Oax-qS-8hE" firstAttribute="leading" secondItem="fhc-gK-49d" secondAttribute="trailing" constant="8" id="BEQ-2G-OEb"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Oax-qS-8hE" secondAttribute="bottom" constant="15" id="SLP-z4-HjA"/>
-                            <constraint firstItem="Oax-qS-8hE" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="kG2-O7-LLT"/>
-                            <constraint firstItem="fhc-gK-49d" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="msf-IO-Z0Q"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fhc-gK-49d" secondAttribute="bottom" constant="20" id="xiJ-AR-Yx3"/>
+                            <constraint firstItem="J8J-By-AAw" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="FWN-vl-IzX"/>
+                            <constraint firstItem="J8J-By-AAw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="OIX-5b-LLe"/>
+                            <constraint firstItem="J8J-By-AAw" firstAttribute="leading" secondItem="Oax-qS-8hE" secondAttribute="trailing" constant="8" id="UvB-ge-V0D"/>
+                            <constraint firstItem="Oax-qS-8hE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="pWa-8F-CDO"/>
+                            <constraint firstItem="Oax-qS-8hE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="pq1-Z6-VMY"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addAWordTextField" destination="Oax-qS-8hE" id="uSC-ef-tSe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
