@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var addAWordTextField: UITextField!
+    @IBOutlet weak var addAWordButton: UIButton!
     
     var wordListArray = ["Hillary", "Jeb", "Trump", "Feel the Bern", "is", "the", "candidate", "Rand Paul", "Christie", "Republican", "Democrat"]
     
@@ -66,6 +67,38 @@ class ViewController: UIViewController {
         wordListArray.append(newWordListItem)
         println(wordListArray.description)
         addAWordTextField.resignFirstResponder()
+        
+        addNewWord()
+    }
+    
+    func addNewWord () {
+        var usersNewWord = addAWordTextField.text
+        var label = UILabel()
+        label.text = usersNewWord
+        label.textColor = UIColor.blueColor()
+        label.font = UIFont.systemFontOfSize(32)
+        label.sizeToFit()
+        label.backgroundColor = UIColor.whiteColor()
+        label.center = CGPoint(x: 150, y: 200)
+        
+        var randomX = CGFloat(arc4random_uniform(300))
+        var randomY = CGFloat(arc4random_uniform(480))
+        
+        label.center = CGPoint(x: randomX - 05, y: randomY + 50)
+        
+        view.addSubview(label)
+        
+        var panGesture = UIPanGestureRecognizer(target: self, action: Selector("handlePanGesture:"))
+        label.addGestureRecognizer(panGesture)
+        label.userInteractionEnabled = true
+        
+        addAWordTextField.text = ""
+        
+        addAWordTextField.hidden = true
+        addAWordButton.hidden = true
+        
+
+        
     }
 
 }

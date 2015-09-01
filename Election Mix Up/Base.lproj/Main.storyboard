@@ -43,6 +43,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addAWordButton" destination="J8J-By-AAw" id="sST-5r-aVa"/>
                         <outlet property="addAWordTextField" destination="Oax-qS-8hE" id="uSC-ef-tSe"/>
                     </connections>
                 </viewController>
