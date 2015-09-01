@@ -32,12 +32,36 @@
                                     <action selector="addWordEnterButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KBs-Kq-X9s"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BI6-AG-iyx">
+                                <rect key="frame" x="515" y="562" width="69" height="30"/>
+                                <state key="normal" title="Red State">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="redStateButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Pe-aK-3jo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECw-Pz-ebK">
+                                <rect key="frame" x="16" y="562" width="71" height="30"/>
+                                <state key="normal" title="Blue State">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="blueStateButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p3D-nh-5ZK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ECw-Pz-ebK" secondAttribute="bottom" constant="8" id="64t-Tp-weY"/>
+                            <constraint firstItem="BI6-AG-iyx" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="7tk-xq-DWC"/>
                             <constraint firstItem="J8J-By-AAw" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="FWN-vl-IzX"/>
                             <constraint firstItem="J8J-By-AAw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="OIX-5b-LLe"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="BI6-AG-iyx" secondAttribute="bottom" constant="8" id="Ooz-oe-E4d"/>
                             <constraint firstItem="J8J-By-AAw" firstAttribute="leading" secondItem="Oax-qS-8hE" secondAttribute="trailing" constant="8" id="UvB-ge-V0D"/>
+                            <constraint firstItem="ECw-Pz-ebK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="YhJ-jo-9Ys"/>
                             <constraint firstItem="Oax-qS-8hE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="pWa-8F-CDO"/>
                             <constraint firstItem="Oax-qS-8hE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="pq1-Z6-VMY"/>
                         </constraints>
@@ -45,6 +69,8 @@
                     <connections>
                         <outlet property="addAWordButton" destination="J8J-By-AAw" id="sST-5r-aVa"/>
                         <outlet property="addAWordTextField" destination="Oax-qS-8hE" id="uSC-ef-tSe"/>
+                        <outlet property="blueStateButton" destination="ECw-Pz-ebK" id="1pL-0r-n9n"/>
+                        <outlet property="redStateButton" destination="BI6-AG-iyx" id="CcP-eU-apa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

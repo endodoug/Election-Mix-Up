@@ -8,17 +8,19 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var addAWordTextField: UITextField!
     @IBOutlet weak var addAWordButton: UIButton!
+    @IBOutlet weak var redStateButton: UIButton!
+    @IBOutlet weak var blueStateButton: UIButton!
     
     var wordListArray = ["Hillary", "Jeb", "Trump", "Feel the Bern", "is", "the", "candidate", "Rand Paul", "Christie", "Republican", "Democrat"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        addAWordTextField.delegate = self
         
         view.backgroundColor = UIColor.blueColor()
         
@@ -96,9 +98,21 @@ class ViewController: UIViewController {
         
         addAWordTextField.hidden = true
         addAWordButton.hidden = true
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        addNewWord()
+        addAWordTextField.resignFirstResponder()
+        return true
+    }
+    
+    @IBAction func blueStateButtonTapped(sender: UIButton) {
+        view.backgroundColor = UIColor.blueColor()
         
-
-        
+    }
+    
+    @IBAction func redStateButtonTapped(sender: UIButton) {
+        view.backgroundColor = UIColor.redColor()
     }
 
 }
