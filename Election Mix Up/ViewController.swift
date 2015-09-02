@@ -147,14 +147,25 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func shareButtonTapped(sender: UIBarButtonItem) {
+        
+        // hide the add a word textfield and button
+        addAWordTextField.hidden = true
+        addAWordButton.hidden = true
+        
+        //create UI Image
         UIGraphicsBeginImageContext(view.frame.size)
         view.layer.renderInContext(UIGraphicsGetCurrentContext())
-        var image = UIGraphicsGetImageFromCurrentImageContext()
+        let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
+        // save image to camera roll
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        
+        
+        
         
         //var postImage = UIImage(named: "\(image)")
         
-        socialShare(sharingText: "Just hit ! Beat it! #SwypI", sharingImage: UIImage(named: "image"), sharingURL: NSURL(string: "http://itunes.apple.com/app/"))
+        socialShare(sharingText: "Just hit ! Beat it! #SwypI", sharingImage: image, sharingURL: NSURL(string: "http://itunes.apple.com/app/"))
 
         println(image)
         
