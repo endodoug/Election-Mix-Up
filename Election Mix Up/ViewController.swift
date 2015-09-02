@@ -14,6 +14,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var addAWordButton: UIButton!
     @IBOutlet weak var redStateButton: UIButton!
     @IBOutlet weak var blueStateButton: UIButton!
+    @IBOutlet weak var shareButton: UIBarButtonItem!
     
     var wordListArray = ["Hillary", "Jeb", "Trump", "Feel the Bern", "is", "the", "candidate", "Rand Paul", "Christie", "Republican", "Democrat"]
     
@@ -106,17 +107,34 @@ class ViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    func socialShare (sharingImage: UIImage?) {
+    func socialShare (#sharingText: String?, sharingImage: UIImage?, sharingURL: NSURL?) {
         var sharingItems = [AnyObject]()
+        
+        if let text = sharingText {
+            sharingItems.append(text)
+        }
         if let image = sharingImage {
             sharingItems.append(image)
+        }
+        if let url = sharingURL {
+            sharingItems.append(url)
         }
         
         let activityViewController = UIActivityViewController(activityItems: sharingItems, applicationActivities: nil)
         
+        //if iPhone
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Phone) {
+            self.presentViewController(activityViewController, animated: true, completion: nil)
+        } else { //if iPad
+            // Change Rect to position Popover
+            var popoverCntlr = UIPopoverController(contentViewController: activityViewController)
+            popoverCntlr.presentPopoverFromRect(CGRectMake(self.view.frame.size.width/2, self.view.frame.size.height/4, 0, 0), inView: self.view, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
+            
+        }
         
-        activityViewController.excludedActivityTypes = [UIActivityTypeCopyToPasteboard,UIActivityTypeAirDrop,UIActivityTypeAddToReadingList,UIActivityTypeAssignToContact,UIActivityTypePostToTencentWeibo,UIActivityTypePostToVimeo,UIActivityTypePrint,UIActivityTypeSaveToCameraRoll,UIActivityTypePostToWeibo]
-        self.presentViewController(activityViewController, animated: true, completion: nil)
+        
+//        activityViewController.excludedActivityTypes = [UIActivityTypeCopyToPasteboard,UIActivityTypeAirDrop,UIActivityTypeAddToReadingList,UIActivityTypeAssignToContact,UIActivityTypePostToTencentWeibo,UIActivityTypePostToVimeo,UIActivityTypePrint,UIActivityTypeSaveToCameraRoll,UIActivityTypePostToWeibo]
+//        self.presentViewController(activityViewController, animated: true, completion: nil)
     }
     
     @IBAction func blueStateButtonTapped(sender: UIButton) {
@@ -128,18 +146,31 @@ class ViewController: UIViewController, UITextFieldDelegate {
         view.backgroundColor = UIColor.redColor()
     }
 
-    @IBAction func shareButtonTapped(sender: UIButton) {
-        
+    @IBAction func shareButtonTapped(sender: UIBarButtonItem) {
         UIGraphicsBeginImageContext(view.frame.size)
         view.layer.renderInContext(UIGraphicsGetCurrentContext())
         var image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        var postImage = UIImage(named: "\(image)")
+        //var postImage = UIImage(named: "\(image)")
         
-        socialShare(UIImage(named: "image"))
-        //println(image)
+        socialShare(sharingText: "Just hit ! Beat it! #SwypI", sharingImage: UIImage(named: "image"), sharingURL: NSURL(string: "http://itunes.apple.com/app/"))
 
+        println(image)
+        
     }
+//    @IBAction func shareButtonTapped(sender: UIButton) {
+//        
+//        UIGraphicsBeginImageContext(view.frame.size)
+//        view.layer.renderInContext(UIGraphicsGetCurrentContext())
+//        var image = UIGraphicsGetImageFromCurrentImageContext()
+//        UIGraphicsEndImageContext()
+//        
+//        var postImage = UIImage(named: "\(image)")
+//        
+//        socialShare(UIImage(named: "image"))
+//        //println(image)
+//
+//    }
 }
 
