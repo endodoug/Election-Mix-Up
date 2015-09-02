@@ -16,7 +16,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var blueStateButton: UIButton!
     @IBOutlet weak var shareButton: UIBarButtonItem!
     
-    var wordListArray = ["Hillary", "Jeb", "Trump", "Feel the Bern", "is", "the", "candidate", "Rand Paul", "Christie", "Republican", "Democrat"]
+    var wordListArray = ["Hillary", "Jeb", "Trump", "Feel the Bern", "is", "the", "candidate", "Rand Paul", "Christie", "Republicans", "Democrats", "focus of evil", "a crook", "a cult of", "I", "growing on you", "axis of evil", "the only thing", "a", "ought to be", "potato", "not to swap", "misunderestimated", "a big effing deal", "the", "is preferable to", "taxes", "the buck", "you cannot stop", "with lust", "were", "of" ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -132,9 +132,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
         }
         
-        
-//        activityViewController.excludedActivityTypes = [UIActivityTypeCopyToPasteboard,UIActivityTypeAirDrop,UIActivityTypeAddToReadingList,UIActivityTypeAssignToContact,UIActivityTypePostToTencentWeibo,UIActivityTypePostToVimeo,UIActivityTypePrint,UIActivityTypeSaveToCameraRoll,UIActivityTypePostToWeibo]
-//        self.presentViewController(activityViewController, animated: true, completion: nil)
+       self.presentViewController(activityViewController, animated: true, completion: nil)
     }
     
     @IBAction func blueStateButtonTapped(sender: UIButton) {
@@ -161,27 +159,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
         
         
-        
-        
-        //var postImage = UIImage(named: "\(image)")
-        
-        socialShare(sharingText: "Just hit ! Beat it! #SwypI", sharingImage: image, sharingURL: NSURL(string: "http://itunes.apple.com/app/"))
+        socialShare(sharingText: "Just hit ! Beat it! #SwypI", sharingImage: image, sharingURL: NSURL(string: ""))
 
         println(image)
         
     }
-//    @IBAction func shareButtonTapped(sender: UIButton) {
-//        
-//        UIGraphicsBeginImageContext(view.frame.size)
-//        view.layer.renderInContext(UIGraphicsGetCurrentContext())
-//        var image = UIGraphicsGetImageFromCurrentImageContext()
-//        UIGraphicsEndImageContext()
-//        
-//        var postImage = UIImage(named: "\(image)")
-//        
-//        socialShare(UIImage(named: "image"))
-//        //println(image)
-//
-//    }
 }
 
