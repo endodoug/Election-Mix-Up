@@ -132,7 +132,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
         }
         
-       self.presentViewController(activityViewController, animated: true, completion: nil)
+       //self.presentViewController(activityViewController, animated: true, completion: nil)
     }
     
     @IBAction func blueStateButtonTapped(sender: UIButton) {
@@ -158,10 +158,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // save image to camera roll
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
         
-        
         socialShare(sharingText: "Just hit ! Beat it! #SwypI", sharingImage: image, sharingURL: NSURL(string: ""))
-
-        println(image)
         
     }
 }
