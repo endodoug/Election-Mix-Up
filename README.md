@@ -2,6 +2,13 @@ Election Mix Up
 ======
 **I HATE POLITICS!** Election Mix Up is a 2016 Election themed word game based on Old School refrigerator magnets.  It's a simple time waster game. 
 
+## ToDo
+- Add artwork.
+- Add words to wordListArray.
+- Randomize and select 20 - 25 words to start the game.
+- Position starting words in the bottom of fridge.
+- Add a restart feature.
+
 #### Screenshot
 
 ![Screenshot iOS](http://url/screenshot-appname-ios.png "screenshot iOS")
