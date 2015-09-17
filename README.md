@@ -1,6 +1,6 @@
 Election Mix Up
 ======
-**I HATE POLITICS!** Election Mix Up is a 2016 Election themed word game. 
+**I HATE POLITICS!** Election Mix Up is a 2016 Election themed word game based on Old School refrigerator magnets.  It's a simple time waster game. 
 
 #### Screenshot
 
@@ -53,4 +53,3 @@ Election Mix Up
 * Twitter: [@endodoug](https://twitter.com/endodoug "endodoug on twitter")
 * other communication/social media
 
-[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=username&url=https://github.com/username/appname&title=appname&language=&tags=github&category=software) 
