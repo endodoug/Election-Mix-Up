@@ -1,5 +1,6 @@
 Election Mix Up
 ======
+
 **I HATE POLITICS!** Election Mix Up is a 2016 Election themed word game based on Old School refrigerator magnets.  It's a simple time waster game. 
 
 ## ToDo
