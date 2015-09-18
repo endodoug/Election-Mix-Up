@@ -16,22 +16,20 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var blueStateButton: UIButton!
     @IBOutlet weak var shareButton: UIBarButtonItem!
     
-    var wordListArray = ["Hillary", "Jeb", "Trump", "Feel the Bern", "is", "the", "candidate", "Rand Paul", "Christie", "Republicans", "Democrats", "focus of evil", "a crook", "a cult of", "I", "growing on you", "axis of evil", "the only thing", "a", "ought to be", "potato", "not to swap", "misunderestimated", "a big effing deal", "the", "is preferable to", "taxes", "the buck", "you cannot stop", "with lust", "were", "of" ]
+    var wordListArray = ["Hillary", "Jeb", "Trump", "Feel the Bern", "is", "the", "candidate"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         addAWordTextField.delegate = self
         
-        view.backgroundColor = UIColor.blueColor()
-        
         for word in wordListArray {
-            var label = UILabel()
+            let label = UILabel()
             label.text = word
-            label.textColor = UIColor.blueColor()
-            label.font = UIFont.systemFontOfSize(32)
+            label.textColor = UIColor.whiteColor()
+            label.font = UIFont.systemFontOfSize(14)
             label.sizeToFit()
-            label.backgroundColor = UIColor.whiteColor()
+            label.backgroundColor = UIColor(red: 59/255, green: 58/255, blue: 83/255, alpha: 1)
             label.center = CGPoint(x: 150, y: 200)
             
             let randomX = CGFloat(arc4random_uniform(300))
@@ -50,11 +48,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func handlePanGesture(panGesture: UIPanGestureRecognizer) {
         // get translation
-        var translation = panGesture.translationInView(view)
+        let translation = panGesture.translationInView(view)
         panGesture.setTranslation(CGPointZero, inView: view)
         
         // add dx, dy to current label position
-        var label = panGesture.view as! UILabel
+        let label = panGesture.view as! UILabel
         label.center = CGPoint(x: label.center.x + translation.x, y: label.center.y + translation.y)
         
     }
@@ -66,7 +64,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func addWordEnterButtonTapped(sender: UIButton) {
         //println("text entry working")
-        var newWordListItem = addAWordTextField.text
+        let newWordListItem = addAWordTextField.text
         wordListArray.append(newWordListItem!)
         print(wordListArray.description)
         addAWordTextField.resignFirstResponder()
@@ -75,8 +73,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     func addNewWord () {
-        var usersNewWord = addAWordTextField.text
-        var label = UILabel()
+        let usersNewWord = addAWordTextField.text
+        let label = UILabel()
         label.text = usersNewWord
         label.textColor = UIColor.blueColor()
         label.font = UIFont.systemFontOfSize(32)
@@ -91,7 +89,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         view.addSubview(label)
         
-        var panGesture = UIPanGestureRecognizer(target: self, action: Selector("handlePanGesture:"))
+        let panGesture = UIPanGestureRecognizer(target: self, action: Selector("handlePanGesture:"))
         label.addGestureRecognizer(panGesture)
         label.userInteractionEnabled = true
         
@@ -127,7 +125,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             self.presentViewController(activityViewController, animated: true, completion: nil)
         } else { //if iPad
             // Change Rect to position Popover
-            var popoverCntlr = UIPopoverController(contentViewController: activityViewController)
+            let popoverCntlr = UIPopoverController(contentViewController: activityViewController)
             popoverCntlr.presentPopoverFromRect(CGRectMake(self.view.frame.size.width/2, self.view.frame.size.height/4, 0, 0), inView: self.view, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
             
         }
