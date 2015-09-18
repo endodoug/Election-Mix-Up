@@ -34,14 +34,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
             label.backgroundColor = UIColor.whiteColor()
             label.center = CGPoint(x: 150, y: 200)
             
-            var randomX = CGFloat(arc4random_uniform(300))
-            var randomY = CGFloat(arc4random_uniform(480))
+            let randomX = CGFloat(arc4random_uniform(300))
+            let randomY = CGFloat(arc4random_uniform(480))
             
             label.center = CGPoint(x: randomX - 05, y: randomY + 50)
             
             view.addSubview(label)
             
-            var panGesture = UIPanGestureRecognizer(target: self, action: Selector("handlePanGesture:"))
+            let panGesture = UIPanGestureRecognizer(target: self, action: Selector("handlePanGesture:"))
             label.addGestureRecognizer(panGesture)
             label.userInteractionEnabled = true
             
@@ -67,8 +67,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func addWordEnterButtonTapped(sender: UIButton) {
         //println("text entry working")
         var newWordListItem = addAWordTextField.text
-        wordListArray.append(newWordListItem)
-        println(wordListArray.description)
+        wordListArray.append(newWordListItem!)
+        print(wordListArray.description)
         addAWordTextField.resignFirstResponder()
         
         addNewWord()
@@ -84,8 +84,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         label.backgroundColor = UIColor.whiteColor()
         label.center = CGPoint(x: 150, y: 200)
         
-        var randomX = CGFloat(arc4random_uniform(300))
-        var randomY = CGFloat(arc4random_uniform(480))
+        let randomX = CGFloat(arc4random_uniform(300))
+        let randomY = CGFloat(arc4random_uniform(480))
         
         label.center = CGPoint(x: randomX - 05, y: randomY + 50)
         
@@ -107,7 +107,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    func socialShare (#sharingText: String?, sharingImage: UIImage?, sharingURL: NSURL?) {
+    func socialShare (sharingText sharingText: String?, sharingImage: UIImage?, sharingURL: NSURL?) {
         var sharingItems = [AnyObject]()
         
         if let text = sharingText {
@@ -152,7 +152,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         //create UI Image
         UIGraphicsBeginImageContext(view.frame.size)
-        view.layer.renderInContext(UIGraphicsGetCurrentContext())
+        view.layer.renderInContext(UIGraphicsGetCurrentContext()!)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         // save image to camera roll
