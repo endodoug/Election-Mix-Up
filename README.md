@@ -1,5 +1,6 @@
 Election Mix Up
 ======
+![iOS](https://img.shields.io/badge/platform-iOS-orange.svg) ![Swift](https://img.shields.io/badge/language-swift-orange.svg)
 
 **I HATE POLITICS!** Election Mix Up is a 2016 Election themed word game based on Old School refrigerator magnets.  It's a simple time waster game. 
 
